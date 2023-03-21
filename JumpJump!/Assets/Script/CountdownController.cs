@@ -1,25 +1,51 @@
+using System.Collections.Generic;
 using System.Collections;
 using UnityEngine.UI;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro; 
 
+// public class CountdownController : MonoBehaviour
+// {
+
+//     public float timeLeft = 3.0f;
+//     public TextMeshProUGUI startText; //used for showing countdown from 3,2,1 
+
+
+//     void Update()
+//     {
+//         timeLeft -= Time.deltaTime;
+//         startText.text = (timeLeft).ToString("0");
+//         if (timeLeft < 1)
+//         {
+//             startText.text = "GO!"; 
+//         }
+
+//     }
+// }
+
 public class CountdownController : MonoBehaviour
 {
+    public int countdownTime;
+    public TextMeshProUGUI coundownDisplay;
 
-    public float timeLeft = 3.0f;
-    public TextMeshProUGUI startText; //used for showing countdown from 3,2,1 
-
-
-    void Update()
+    private void Start()
     {
-        timeLeft -= Time.deltaTime;
-        startText.text = (timeLeft).ToString("0");
-        if (timeLeft < 1)
+        StartCoroutine(CountdownToStart());
+    }
+    
+    IEnumerator CountdownToStart()
+    {
+        while (countdownTime > 0)
         {
-            startText.text = "GO!"; 
-            Destroy(startText.gameObject, 1.0f); //destroy the GO! text after 1 second
+            coundownDisplay.text = countdownTime.ToString();
+            yield return new WaitForSeconds(1f);
+            countdownTime--;
         }
-
+        coundownDisplay.text = "GO!";
+        
+        yield return new WaitForSeconds(1f);
+        coundownDisplay.gameObject.SetActive(false);
     }
 }
+
