@@ -16,7 +16,7 @@ public class PlayerController : MonoBehaviour
     private Animator myAnimator;
     
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         myRigidbody = GetComponent<Rigidbody2D>();    
         myCollider = GetComponent<Collider2D>();  
