@@ -32,6 +32,7 @@ public class CountdownController : MonoBehaviour
     private void Start()
     {
         StartCoroutine(CountdownToStart());
+        GameObject.FindWithTag("Player").GetComponent<PlayerController>().enabled = false;
     }
     
     IEnumerator CountdownToStart()
@@ -46,6 +47,7 @@ public class CountdownController : MonoBehaviour
         
         yield return new WaitForSeconds(1f);
         coundownDisplay.gameObject.SetActive(false);
+                GameObject.FindWithTag("Player").GetComponent<PlayerController>().enabled = true;
     }
 }
 
