@@ -50,4 +50,3 @@ public class CountdownController : MonoBehaviour
                 GameObject.FindWithTag("Player").GetComponent<PlayerController>().enabled = true;
     }
 }
-
