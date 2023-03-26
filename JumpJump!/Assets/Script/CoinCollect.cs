@@ -2,11 +2,9 @@ using UnityEngine;
 
 public class CoinCollect : MonoBehaviour {
     
-    // soundeffect of collision
-    public AudioSource coinSource;
-    void Start(){
-        coinSource = GetComponent<AudioSource>();
-    }
+    [SerializeField] private AudioSource coin1;
+    [SerializeField] private AudioSource coin2;
+
 
     private void OnTriggerEnter2D(Collider2D collider2D)
     {
@@ -14,7 +12,7 @@ public class CoinCollect : MonoBehaviour {
         {
             PlayerManager.numberOfCoins++;
             PlayerPrefs.SetInt("NumberOfCoins", PlayerManager.numberOfCoins);
-            coinSource.Play();
+            coin1.Play();
             Destroy(collider2D.gameObject);
         }
 
@@ -22,7 +20,7 @@ public class CoinCollect : MonoBehaviour {
         {
             PlayerManager.numberOfCoins += 5;
             PlayerPrefs.SetInt("NumberOfCoins", PlayerManager.numberOfCoins);
-            coinSource.Play();
+            coin2.Play();
             Destroy(collider2D.gameObject);
 
         }

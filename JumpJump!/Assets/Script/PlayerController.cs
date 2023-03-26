@@ -14,6 +14,8 @@ public class PlayerController : MonoBehaviour
 
     private Collider2D myCollider;
     private Animator myAnimator;
+
+    [SerializeField] private AudioSource jumpsound;
     
     // Start is called before the first frame update
     private void Start()
@@ -34,6 +36,7 @@ public class PlayerController : MonoBehaviour
             // can only jump when touching the ground
             if (grounded)
             {
+                jumpsound.Play();
                 myRigidbody.velocity = new Vector2(myRigidbody.velocity.x, jumpForce);
             }
         }
