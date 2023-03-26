@@ -45,12 +45,14 @@ public class PlayerManager : MonoBehaviour
     public void PauseGame()
     {
         Time.timeScale = 0;
+        AudioListener.pause = true;
         pauseMenuScreen.SetActive(true);
     }
     // resume game button
     public void ResumeGame()
     {
         Time.timeScale = 1;
+        AudioListener.pause = false;
         pauseMenuScreen.SetActive(false);
         myCountdown.enabled = true;
     }
@@ -59,4 +61,6 @@ public class PlayerManager : MonoBehaviour
     {
         SceneManager.LoadScene(0);
     }
+
+
 }
