@@ -7,6 +7,7 @@ public class PlayerManager : MonoBehaviour
 {
     // display game over screen
     public static bool isGameOver;
+    public static bool isLevelComplete;
     public GameObject gameOverScreen;
     public GameObject pauseMenuScreen;
     private CountdownController myCountdown;
@@ -18,6 +19,7 @@ public class PlayerManager : MonoBehaviour
     {
         numberOfCoins = PlayerPrefs.GetInt("NumberOfCoins", 0);
         isGameOver = false;
+        isLevelComplete = false;
         myCountdown = GetComponent<CountdownController>();
     }
 
@@ -62,5 +64,17 @@ public class PlayerManager : MonoBehaviour
         SceneManager.LoadScene(0);
     }
 
-
+    // private void OnTriggerEnter2D(Collider2D collision)
+    // {
+    //     if (collision.tag == "Finish" && collision.tag == "Player")
+    //     {
+    //         levelCompleteScreen.SetActive(true);
+    //         myCountdown.enabled = false;
+    //         isLevelComplete = true;
+    //     }
+    // }
+    public void NextLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
 }
