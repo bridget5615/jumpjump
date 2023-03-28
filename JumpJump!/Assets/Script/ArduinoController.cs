@@ -9,8 +9,6 @@ public class ArduinoController : MonoBehaviour
 {
     public float moveSpeed; 
     private float amountToMove;
-    public float jumpForce;
-
 
     SerialPort sp = new SerialPort("/dev/tty.usbmodem1301", 9600);
 
@@ -25,7 +23,7 @@ public class ArduinoController : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
-        myRigidbody = GetComponent<Rigidbody2D>(); 
+        myRigidbody = GetComponent<Rigidbody2D>();    
         myCollider = GetComponent<Collider2D>();  
         myAnimator = GetComponent<Animator>();  
         sp.Open();
@@ -36,7 +34,6 @@ public class ArduinoController : MonoBehaviour
     void Update()
     {
         grounded = Physics2D.IsTouchingLayers(myCollider, whatIsGround);
-        myRigidbody.velocity = new Vector2(moveSpeed, myRigidbody.velocity.y);
         amountToMove = moveSpeed * Time.deltaTime;
 
         if (sp.IsOpen)
@@ -50,22 +47,19 @@ public class ArduinoController : MonoBehaviour
             {
             }
         }
-
         myAnimator.SetFloat("Speed", myRigidbody.velocity.x);
-
         // myAnimator.SetBool("Grounded", grounded);
     }
 
     void MoveObject(int Direction)
     {
-        
-        if (Direction == 14 && grounded)
+
+        if (Direction == 14)
         {
-            myRigidbody.velocity = new Vector2(myRigidbody.velocity.x, jumpForce);
             myAnimator.SetBool("isJumping", true);
-            transform.Translate(Vector3.right * amountToMove, Space.World);
+            transform.Translate(Vector3.left * amountToMove, Space.World);
+
         }
-        
         if (Direction == 0)
         {
             myAnimator.SetBool("isJumping", false);
