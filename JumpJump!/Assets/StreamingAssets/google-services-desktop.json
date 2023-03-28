@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "324055588854",
+    "firebase_url": "https://jumpjump-19ead-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "jumpjump-19ead",
+    "storage_bucket": "jumpjump-19ead.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:324055588854:android:6681c31838c510460971d7",
+        "android_client_info": {
+          "package_name": "com.jumpjump.jumpjump"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "324055588854-ap23sbd71qjevmja1n6dgnjvonf51f8p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB1FeANK8lhSpCtfeoROYJtuIE4ZouERHU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "324055588854-ap23sbd71qjevmja1n6dgnjvonf51f8p.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
