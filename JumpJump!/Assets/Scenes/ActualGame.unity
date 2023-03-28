@@ -873,25 +873,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5846828746210919731, guid: 3a7598e0321614ee9aab47eb428d6d49, type: 3}
   m_PrefabInstance: {fileID: 1587909473}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &70489315
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 70489307}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f75026912b0d446fdb909ccb01325a01, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 4
-  jumpForce: 14
-  grounded: 0
-  whatIsGround:
-    serializedVersion: 2
-    m_Bits: 256
-  jumpsound: {fileID: 70489323}
 --- !u!114 &70489316
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1205,6 +1186,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelCompleteScreen: {fileID: 127822869}
+--- !u!114 &70489331
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 70489307}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e86cd0044347b48ad8480128c7880129, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 4
+  jumpForce: 14
+  grounded: 0
+  whatIsGround:
+    serializedVersion: 2
+    m_Bits: 256
 --- !u!1 &101920710
 GameObject:
   m_ObjectHideFlags: 0
