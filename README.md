@@ -1,7 +1,7 @@
 # Jumpjump!
 ## BN4102 Gerontechnology for Ageing
 
-This module introduces students to various healthcare technologies that alleviate the burden associated with ageing, with a focus on designing and developing appropriate technological innovations for the silver economy. The module covers the topics on the biology of ageing, psychosocial aspects of ageing, technologies in assisted living, caregiving, as well as digital health in ageing. This module also includes a service learning project where students partner with various social service agencies to identify and address existing gaps through a hands-on design project to develop a gerontechnological innovation prototype.
+Our group has chosen to target the issue of sarcopenia amongst older adults – an age-related condition that leads to the deterioration of muscle mass and function, leading to reduced mobility. It is found that to reduce the progression of sarcopenia, resistance training can be prescribed. To tackle the issue of sarcopenia, we have come up with JumpJump! – an exergame that specifically targets hip exercises. JumpJump! involves 2 main components; a portable resistance training tool that is connected to our game. While connected to our game, one repetition of the hip abduction exercise would lead our avatar to jump and avoid falling into the body of water. Falling into the body of water would prematurely end the game. The aim of JumpJump! is to encourage players to exercise regularly whilst making resistance training fun. 
 
 Group Members: 
 - Bridget Chua
