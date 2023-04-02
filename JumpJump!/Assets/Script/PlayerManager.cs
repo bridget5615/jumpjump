@@ -76,5 +76,9 @@ public class PlayerManager : MonoBehaviour
     public void NextLevel()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        UnityEngine.Debug.Log("next level loaded");
+        Time.timeScale = 1;
+        myCountdown.enabled = true;
+        UnityEngine.Debug.Log("countdown enabled");
     }
 }
