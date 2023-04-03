@@ -38,6 +38,7 @@ public class PlayerController : MonoBehaviour
             {
                 // jumpsound.Play();
                 myRigidbody.velocity = new Vector2(myRigidbody.velocity.x, jumpForce);
+                ScoreManager.instance.AddPoint();
             }
         }
         myAnimator.SetFloat("Speed", myRigidbody.velocity.x);
