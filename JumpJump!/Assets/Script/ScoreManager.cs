@@ -12,6 +12,7 @@ public class ScoreManager : MonoBehaviour
 
     int score = 0;
     int highscore = 0;
+    bool levelCompleted = false;
 
     private void Awake(){
         instance = this;
@@ -26,11 +27,21 @@ public class ScoreManager : MonoBehaviour
         highscoreText.text = "HIGHSCORE: " + highscore.ToString();
     }
 
-    public void AddPoint(){
-        score += 100;
-        scoreText.text = "SCORE: " + score.ToString();
-        if (highscore < score){
-            PlayerPrefs.SetInt("highscore",score);
+        public void AddPoint()
+    {
+        if (!levelCompleted)
+        {
+            score += 100;
+            scoreText.text = "SCORE: " + score.ToString();
+            if (highscore < score)
+            {
+                PlayerPrefs.SetInt("highscore", score);
+            }
         }
+    }
+
+    public void LevelCompleted()
+    {
+        levelCompleted = true;
     }
 }
