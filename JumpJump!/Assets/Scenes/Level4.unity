@@ -7421,7 +7421,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3c6ef945e12b42fd9f49764a9e4c388, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelCompleteScreen: {fileID: 0}
+  levelCompleteScreen: {fileID: 534551032}
 --- !u!114 &1220292607
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19279,7 +19279,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1969317176
 RectTransform:
   m_ObjectHideFlags: 0
