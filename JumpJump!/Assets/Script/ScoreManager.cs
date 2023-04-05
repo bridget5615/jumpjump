@@ -27,7 +27,7 @@ public class ScoreManager : MonoBehaviour
         highscoreText.text = "HIGHSCORE: " + highscore.ToString();
     }
 
-        public void AddPoint()
+    public void AddPoint()
     {
         if (!levelCompleted)
         {
