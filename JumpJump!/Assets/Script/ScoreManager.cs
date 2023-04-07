@@ -12,7 +12,7 @@ public class ScoreManager : MonoBehaviour
 
     int score = 0;
     int highscore = 0;
-    bool levelCompleted = false;
+    //bool levelCompleted = false;
 
     private void Awake(){
         instance = this;
@@ -27,9 +27,11 @@ public class ScoreManager : MonoBehaviour
         highscoreText.text = "HIGHSCORE: " + highscore.ToString();
     }
 
+
+
     public void AddPoint()
     {
-        if (!levelCompleted)
+        if (Time.timeScale == 1)
         {
             score += 100;
             scoreText.text = "SCORE: " + score.ToString();
@@ -38,10 +40,22 @@ public class ScoreManager : MonoBehaviour
                 PlayerPrefs.SetInt("highscore", score);
             }
         }
+        else
+        {
+            score += 0;
+        }
     }
 
-    public void LevelCompleted()
-    {
-        levelCompleted = true;
-    }
+    //public void LevelCompleted()
+    //{
+    //    if (Time.timeScale == 0)
+    //    {
+    //        levelCompleted = true;
+    //    }
+    //    else
+    //    {
+    //        levelCompleted = false;
+    //    }
+
+    //}
 }
