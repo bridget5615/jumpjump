@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Saveda : MonoBehaviour
+public class Savedata : MonoBehaviour
 {
     public void CallSaveData()
     {
