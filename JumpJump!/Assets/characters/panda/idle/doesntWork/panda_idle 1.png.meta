@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 779a7b5f768ca413c87ac9d1af6154fa
+guid: 9a758611d7ccb43a2a888f4574ec5966
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -129,232 +129,253 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: panda_idle
+      name: panda_idle 1_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 888
-        height: 1008
+        width: 891
+        height: 1034
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7a31161663de84d468c2c6c56a366df7
-      internalID: -1505012091
+      spriteID: 77ad9c0baaef94175a146d3d35a69396
+      internalID: -218096965
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: panda_idle_1
+      name: panda_idle 1_1
       rect:
         serializedVersion: 2
-        x: 1013
-        y: 40
-        width: 896
-        height: 965
+        x: 967
+        y: 0
+        width: 911
+        height: 1034
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c2dbd780752a04e00ad38e509a5a8587
-      internalID: 252935722
+      spriteID: b546095c91819496181035998cf590d0
+      internalID: 1468775371
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: panda_idle_2
+      name: panda_idle 1_2
       rect:
         serializedVersion: 2
-        x: 2028
-        y: 30
-        width: 896
-        height: 975
+        x: 1995
+        y: 0
+        width: 923
+        height: 1034
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 15945d69265ba448d988814ffbe081f3
-      internalID: -562656855
+      spriteID: 2458629b13bfd46508fdba4afbfbfb26
+      internalID: -1784128100
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: panda_idle_3
+      name: panda_idle 1_3
       rect:
         serializedVersion: 2
-        x: 3049
+        x: 3052
         y: 3
-        width: 874
-        height: 986
+        width: 911
+        height: 999
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3a0da03136f1040c595895f537e8d099
-      internalID: -386443970
+      spriteID: 37d13cb106f104bb6a4103996f7df9b9
+      internalID: 1753657215
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: panda_idle_4
+      name: panda_idle 1_4
       rect:
         serializedVersion: 2
-        x: 4064
+        x: 4057
         y: 0
-        width: 891
-        height: 1008
+        width: 911
+        height: 1034
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c805c71a1605244549576b1f9eabc26e
-      internalID: 845026432
+      spriteID: 5846f221c12b2444da193e7c7f2f26aa
+      internalID: 593039475
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: panda_idle_5
+      name: panda_idle 1_5
       rect:
         serializedVersion: 2
-        x: 5090
+        x: 5062
         y: 0
-        width: 891
-        height: 1008
+        width: 911
+        height: 1034
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7e720f0db7873475eb4d480ec59078e3
-      internalID: 1994120378
+      spriteID: 3923a2b608e4a40e69e00422f3b7ae53
+      internalID: -11038010
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: panda_idle_6
+      name: panda_idle 1_6
       rect:
         serializedVersion: 2
-        x: 6105
-        y: 8
-        width: 891
-        height: 984
+        x: 6014
+        y: 0
+        width: 923
+        height: 1034
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7201e29fd4e5f4d9fa29af830303d033
-      internalID: -56717971
+      spriteID: b06c6220875eb4aa8abfef9ca609c130
+      internalID: 2097513261
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: panda_idle_7
+      name: panda_idle 1_7
       rect:
         serializedVersion: 2
-        x: 7126
-        y: 8
-        width: 891
-        height: 976
+        x: 6972
+        y: 3
+        width: 899
+        height: 999
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 29a6e1d09d19b44e0acf38e156eb5ec9
-      internalID: -1919772370
+      spriteID: be5dfabad1f08457cb70e8e15ca04e07
+      internalID: -1394227909
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: panda_idle_8
+      name: panda_idle 1_8
       rect:
         serializedVersion: 2
-        x: 8141
-        y: 14
-        width: 891
-        height: 970
+        x: 7988
+        y: 3
+        width: 911
+        height: 993
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 322de2df7599d40ee86b25192295d68e
-      internalID: -896665116
+      spriteID: ab1c0f067bb774ba0b3ba727e15ea0d7
+      internalID: -929697053
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: panda_idle_9
+      name: panda_idle 1_9
       rect:
         serializedVersion: 2
-        x: 9162
-        y: 8
-        width: 891
-        height: 959
+        x: 8934
+        y: 9
+        width: 941
+        height: 993
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 11279540766d44ca0b8a8af3bcc1055b
-      internalID: -67196527
+      spriteID: 65b98282480e34017ad0615efa7f1dc7
+      internalID: -965128162
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: panda_idle_10
+      name: panda_idle 1_10
       rect:
         serializedVersion: 2
-        x: 10173
-        y: 14
-        width: 887
-        height: 953
+        x: 10009
+        y: 0
+        width: 900
+        height: 1034
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9020d11e2448d458ea1318203bde5fcf
-      internalID: 594755090
+      spriteID: 701499f3a69c748d5b24386202d9edba
+      internalID: 1019204872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: panda_idle 1_11
+      rect:
+        serializedVersion: 2
+        x: 11049
+        y: 0
+        width: 914
+        height: 1034
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f88f764b53953460c86f8dfb97d36cd5
+      internalID: 253609779
       vertices: []
       indices: 
       edges: []
@@ -370,17 +391,18 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      panda_idle_7: -1919772370
-      panda_idle_4: 845026432
-      panda_idle_9: -67196527
-      panda_idle_3: -386443970
-      panda_idle_8: -896665116
-      panda_idle_6: -56717971
-      panda_idle: -1505012091
-      panda_idle_10: 594755090
-      panda_idle_5: 1994120378
-      panda_idle_1: 252935722
-      panda_idle_2: -562656855
+      panda_idle 1_9: -965128162
+      panda_idle 1_8: -929697053
+      panda_idle 1_5: -11038010
+      panda_idle 1_2: -1784128100
+      panda_idle 1_4: 593039475
+      panda_idle 1_1: 1468775371
+      panda_idle 1_3: 1753657215
+      panda_idle 1_6: 2097513261
+      panda_idle 1_7: -1394227909
+      panda_idle 1_11: 253609779
+      panda_idle 1_0: -218096965
+      panda_idle 1_10: 1019204872
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

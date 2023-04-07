@@ -1,15 +1,33 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CamController : MonoBehaviour
 {
-    public Transform target; 
-    public Vector3 offset; 
+    public string playerTag = "Player";
+    public float cameraDistance = 10f;
 
-    // Update is called once per frame
-    void Update()
+    private Transform target;
+
+    private void Start()
     {
-        transform.position = target.position + offset;
+        GameObject playerObject = GameObject.FindGameObjectWithTag(playerTag);
+        if (playerObject != null)
+        {
+            target = playerObject.transform;
+        }
+        else
+        {
+            Debug.LogError($"Could not find object with tag '{playerTag}'");
+        }
+    }
+
+    private void LateUpdate()
+    {
+        if (target == null) return;
+
+        Vector3 targetPosition = target.position + Vector3.up; // add a small offset to keep camera above the player
+        Vector3 cameraPosition = targetPosition - transform.forward * cameraDistance;
+
+        transform.position = cameraPosition;
+        transform.LookAt(targetPosition);
     }
 }

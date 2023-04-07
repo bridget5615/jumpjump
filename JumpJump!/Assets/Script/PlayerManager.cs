@@ -14,13 +14,22 @@ public class PlayerManager : MonoBehaviour
 
     public static int numberOfCoins;
     public TextMeshProUGUI coinsText;
+
+    // public GameObject[] playerPrefabs;
+    // int characterIndex;
     
     private void Awake()
     {
+        // characterIndex =  PlayerPrefs.GetInt("SelectedCharacter", 0);
+        // Instantiate(playerPrefabs[characterIndex]);
         numberOfCoins = PlayerPrefs.GetInt("NumberOfCoins", 0);
         isGameOver = false;
         isLevelComplete = false;
         myCountdown = GetComponent<CountdownController>();
+        if (numberOfCoins < 0)
+        {
+            numberOfCoins = 0;
+        }
     }
 
     // Update is called once per frame
