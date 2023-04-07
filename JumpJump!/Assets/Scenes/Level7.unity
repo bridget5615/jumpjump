@@ -36131,11 +36131,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5846828746210919735, guid: 3a7598e0321614ee9aab47eb428d6d49, type: 3}
   m_PrefabInstance: {fileID: 1724965364}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &1724965366 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5846828746210919731, guid: 3a7598e0321614ee9aab47eb428d6d49, type: 3}
-  m_PrefabInstance: {fileID: 1724965364}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1724965367
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37587,6 +37582,9 @@ MonoBehaviour:
   gameOverScreen: {fileID: 964945661}
   pauseMenuScreen: {fileID: 1004711581}
   coinsText: {fileID: 1863562292}
+  playerPrefabs:
+  - {fileID: 5846828746210919735, guid: 3a7598e0321614ee9aab47eb428d6d49, type: 3}
+  - {fileID: 3123393402258097762, guid: 4a7e42161969f44c598666614e8facba, type: 3}
 --- !u!114 &1822470127
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -39004,8 +39002,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c99ba3f92450490194fd88c17de5342, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 1724965366}
-  offset: {x: 0, y: 0.14, z: -2}
+  playerTag: Player
+  cameraDistance: 10
 --- !u!81 &1945686992
 AudioListener:
   m_ObjectHideFlags: 0
