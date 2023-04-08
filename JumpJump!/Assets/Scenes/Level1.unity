@@ -37587,11 +37587,6 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
---- !u!4 &5846828745425751599 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 3434447119033417903, guid: c7d2e1d51327142ce9cac8f25cd0af00, type: 3}
-  m_PrefabInstance: {fileID: 9119086320079916672}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &5846828745425751612
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37644,6 +37639,10 @@ PrefabInstance:
     - target: {fileID: 3434447119033417899, guid: c7d2e1d51327142ce9cac8f25cd0af00, type: 3}
       propertyPath: m_Name
       value: Blob
+      objectReference: {fileID: 0}
+    - target: {fileID: 3434447119033417899, guid: c7d2e1d51327142ce9cac8f25cd0af00, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3434447119033417902, guid: c7d2e1d51327142ce9cac8f25cd0af00, type: 3}
       propertyPath: m_Sprite
