@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: b92a2378c54024f76b19ca3c04da15c6
+guid: 4d919fe656c799a4998c8e076dfa310e
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -102,6 +102,18 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
     buildTarget: iPhone
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -129,13 +141,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: jump2_0
+      name: pandajump_2_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 909
-        height: 999
+        width: 915
+        height: 1011
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -143,20 +155,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f94611d071b6b4dea929a3980b1d2278
-      internalID: -11884570
+      spriteID: 7f5a1b316cbe4db48b54e868cbcfe559
+      internalID: 660999713
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: jump2_1
+      name: pandajump_2_1
       rect:
         serializedVersion: 2
-        x: 1142
-        y: 14
-        width: 909
-        height: 999
+        x: 915
+        y: 0
+        width: 915
+        height: 1011
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -164,8 +176,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: abc6dbf4b91394ef9856479c741db621
-      internalID: 1932530027
+      spriteID: 44317490c8b2ead4b9340062115e571c
+      internalID: -699316810
       vertices: []
       indices: 
       edges: []
@@ -181,8 +193,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      jump2_1: 1932530027
-      jump2_0: -11884570
+      pandajump_2_0: 660999713
+      pandajump_2_1: -699316810
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

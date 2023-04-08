@@ -41,41 +41,56 @@ public class CharacterSelect : MonoBehaviour
     }
 
     public void ChangeNext()
+{
+    skins[selectedCharacter].SetActive(false);
+    selectedCharacter++;
+    if (selectedCharacter == skins.Length)
+        selectedCharacter = 0;
+
+    skins[selectedCharacter].SetActive(true);
+    if(characters[selectedCharacter].isUnlocked)
+        PlayerPrefs.SetInt("SelectedCharacter", selectedCharacter);
+
+    // Deactivate all other skins
+    for (int i = 0; i < skins.Length; i++)
     {
-        skins[selectedCharacter].SetActive(false);
-        selectedCharacter++;
-        if (selectedCharacter == skins.Length)
-            selectedCharacter = 0;
-
-        skins[selectedCharacter].SetActive(true);
-        if(characters[selectedCharacter].isUnlocked)
-            PlayerPrefs.SetInt("SelectedCharacter", selectedCharacter);
-
-        // PlayerPrefs.SetInt("SelectedCharacter", selectedCharacter);
-        UnityEngine.Debug.Log("next button pressed");
-
-        UpdateUI();
+        if (i != selectedCharacter)
+        {
+            skins[i].SetActive(false);
+        }
     }
 
-    public void ChangePrevious()
-    {
-        skins[selectedCharacter].SetActive(false);
-        selectedCharacter--;
-        if (selectedCharacter == -1)
-            selectedCharacter = skins.Length -1;
+    UpdateUI();
+}
 
-        skins[selectedCharacter].SetActive(true);
-        if (characters[selectedCharacter].isUnlocked)
-            PlayerPrefs.SetInt("SelectedCharacter", selectedCharacter);
-        // PlayerPrefs.SetInt("SelectedCharacter", selectedCharacter);
-        UnityEngine.Debug.Log("back button pressed");
-        UpdateUI();
+public void ChangePrevious()
+{
+    skins[selectedCharacter].SetActive(false);
+    selectedCharacter--;
+    if (selectedCharacter == -1)
+        selectedCharacter = skins.Length -1;
+
+    skins[selectedCharacter].SetActive(true);
+    if (characters[selectedCharacter].isUnlocked)
+        PlayerPrefs.SetInt("SelectedCharacter", selectedCharacter);
+
+    // Deactivate all other skins
+    for (int i = 0; i < skins.Length; i++)
+    {
+        if (i != selectedCharacter)
+        {
+            skins[i].SetActive(false);
+        }
     }
+
+    UpdateUI();
+}
+
 
     public void UpdateUI()
     {
         coinsText.text = numberOfCoins.ToString();
-        // nameText.text = characters[selectedCharacter].name;
+        nameText.text = characters[selectedCharacter].name;
         if (characters[selectedCharacter].isUnlocked == true)
         {
             unlockButton.gameObject.SetActive(false);
