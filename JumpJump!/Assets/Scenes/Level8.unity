@@ -23052,6 +23052,10 @@ PrefabInstance:
       value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 5846828746210919735, guid: 3a7598e0321614ee9aab47eb428d6d49, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5846828746210919735, guid: 3a7598e0321614ee9aab47eb428d6d49, type: 3}
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
@@ -36501,9 +36505,6 @@ MonoBehaviour:
   gameOverScreen: {fileID: 452170440}
   pauseMenuScreen: {fileID: 1909562862}
   coinsText: {fileID: 1682947857}
-  playerPrefabs:
-  - {fileID: 5846828746210919735, guid: 3a7598e0321614ee9aab47eb428d6d49, type: 3}
-  - {fileID: 3123393402258097762, guid: 4a7e42161969f44c598666614e8facba, type: 3}
 --- !u!4 &1818322210
 Transform:
   m_ObjectHideFlags: 0
