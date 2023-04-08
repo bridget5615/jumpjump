@@ -1,4 +1,5 @@
 using System.Diagnostics;
+using System.Collections;
 using UnityEngine.SceneManagement;
 using UnityEngine;
 using TMPro;
@@ -15,32 +16,47 @@ public class PlayerManager : MonoBehaviour
     public static int numberOfCoins;
     public TextMeshProUGUI coinsText;
 
-    // public GameObject[] playerPrefabs;
-    // int characterIndex;
-    
+    public PlayfabManager playfabManager;
+    public int maxPlatform = 0;
+
     private void Awake()
     {
-        // characterIndex =  PlayerPrefs.GetInt("SelectedCharacter", 0);
-        // Instantiate(playerPrefabs[characterIndex]);
+        UnityEngine.Debug.Log("PlayerManager Awake called");
         numberOfCoins = PlayerPrefs.GetInt("NumberOfCoins", 0);
+        coinsText = GameObject.Find("CoinsText").GetComponent<TextMeshProUGUI>();
+        coinsText.SetText(numberOfCoins.ToString());
         isGameOver = false;
         isLevelComplete = false;
+        playfabManager = FindObjectOfType<PlayfabManager>();
         myCountdown = GetComponent<CountdownController>();
         if (numberOfCoins < 0)
         {
             numberOfCoins = 0;
         }
+        UnityEngine.Debug.Log("coinsText: " + coinsText);
     }
 
-    // Update is called once per frame
-    void Update()
+
+    private void Update()
     {
-        // allow coins to be kept the same even if the game is restarted
-        coinsText.text = numberOfCoins.ToString();
         if (isGameOver)
         {
             gameOverScreen.SetActive(true);
+            StartCoroutine(playfabManager.SendLeaderboardCoroutine(maxPlatform));
         }
+    }
+
+    // Update the number of coins and update the UI text
+    public void UpdateCoins(int amount)
+    {
+        numberOfCoins += amount;
+        if (numberOfCoins < 0)
+        {
+            numberOfCoins = 0;
+        }
+        coinsText.text = numberOfCoins.ToString();
+        UnityEngine.Debug.Log("UpdateCoinsText called");
+
     }
 
     // replay level again
@@ -59,6 +75,7 @@ public class PlayerManager : MonoBehaviour
         AudioListener.pause = true;
         pauseMenuScreen.SetActive(true);
     }
+
     // resume game button
     public void ResumeGame()
     {
@@ -67,27 +84,18 @@ public class PlayerManager : MonoBehaviour
         pauseMenuScreen.SetActive(false);
         myCountdown.enabled = true;
     }
+
     // go back to home button 
     public void GoToMenu()
     {
         SceneManager.LoadScene(0);
     }
 
-    // private void OnTriggerEnter2D(Collider2D collision)
-    // {
-    //     if (collision.tag == "Finish" && collision.tag == "Player")
-    //     {
-    //         levelCompleteScreen.SetActive(true);
-    //         myCountdown.enabled = false;
-    //         isLevelComplete = true;
-    //     }
-    // }
     public void NextLevel()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-        UnityEngine.Debug.Log("next level loaded");
         Time.timeScale = 1;
         myCountdown.enabled = true;
-        UnityEngine.Debug.Log("countdown enabled");
+        playfabManager.SendLeaderboardCoroutine(maxPlatform);
     }
 }

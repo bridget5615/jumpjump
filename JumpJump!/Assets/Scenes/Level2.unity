@@ -6523,6 +6523,10 @@ PrefabInstance:
       propertyPath: coin2
       value: 
       objectReference: {fileID: 306657103}
+    - target: {fileID: 5846828746210919729, guid: 3a7598e0321614ee9aab47eb428d6d49, type: 3}
+      propertyPath: coinsText
+      value: 
+      objectReference: {fileID: 131514702}
     - target: {fileID: 5846828746210919730, guid: 3a7598e0321614ee9aab47eb428d6d49, type: 3}
       propertyPath: m_SortingOrder
       value: 7
@@ -6665,6 +6669,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelCompleteScreenNext: {fileID: 1902281740}
   levelCompleteScreenchangeleg: {fileID: 1465118129}
+  playfabManager: {fileID: 1763648346}
 --- !u!114 &306657099
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6690,7 +6695,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 306657095}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f75026912b0d446fdb909ccb01325a01, type: 3}
   m_Name: 
@@ -6996,7 +7001,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 306657095}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1a4f9a0115bf47d4c88c0ddf301f3bcb, type: 3}
   m_Name: 
@@ -8837,8 +8842,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 623155904}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 75.7, y: 0.8904, z: 0}
-  m_LocalScale: {x: 1.8268, y: 1.6809, z: 1}
+  m_LocalPosition: {x: 76.0551, y: 1.3708, z: 0}
+  m_LocalScale: {x: 2.5370598, y: 2.6417024, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 263789959}
@@ -12106,6 +12111,8 @@ MonoBehaviour:
   gameOverScreen: {fileID: 828794496}
   pauseMenuScreen: {fileID: 998210949}
   coinsText: {fileID: 131514702}
+  playfabManager: {fileID: 1763648346}
+  maxPlatform: 0
 --- !u!114 &1060957072
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15263,6 +15270,7 @@ GameObject:
   - component: {fileID: 1763648344}
   - component: {fileID: 1763648343}
   - component: {fileID: 1763648342}
+  - component: {fileID: 1763648346}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -15350,6 +15358,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1763648346
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1763648341}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd154209b7e06456a8794f64cc0dcbec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  messageText: {fileID: 0}
+  usernameInput: {fileID: 0}
+  passwordInput: {fileID: 0}
 --- !u!1 &1812751428
 GameObject:
   m_ObjectHideFlags: 0
@@ -21525,8 +21548,8 @@ Tilemap:
   - first: {x: 80, y: -2, z: 0}
     second:
       serializedVersion: 2
-      m_TileIndex: 6
-      m_TileSpriteIndex: 6
+      m_TileIndex: 3
+      m_TileSpriteIndex: 3
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -23000,13 +23023,13 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: d0920686de8054a708758594c6e78048, type: 2}
   - m_RefCount: 4
     m_Data: {fileID: 11400000, guid: e7bcb2d6f86b3461898db40843a1c358, type: 2}
-  - m_RefCount: 334
+  - m_RefCount: 335
     m_Data: {fileID: 11400000, guid: 17ee6f1987c5643d5afc8e27cdd7fcb7, type: 2}
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: c258f92de2495487b97e4ff8974f309b, type: 2}
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: 3a058fa6bf9924efb8564b83ad6cf427, type: 2}
-  - m_RefCount: 11
+  - m_RefCount: 10
     m_Data: {fileID: 11400000, guid: c35b9d34eece34fb1a660115d4f0b887, type: 2}
   - m_RefCount: 10
     m_Data: {fileID: 11400000, guid: a403c206da97245c3b0799978f95fe60, type: 2}
@@ -23019,13 +23042,13 @@ Tilemap:
     m_Data: {fileID: 21300000, guid: 0ca22b74d58659c438cd630b98174fb3, type: 3}
   - m_RefCount: 4
     m_Data: {fileID: 21300000, guid: 2c62264155282ae4e8331ecdbb71f3a5, type: 3}
-  - m_RefCount: 334
+  - m_RefCount: 335
     m_Data: {fileID: 21300000, guid: 818f5c33f57454540951217553efbe57, type: 3}
   - m_RefCount: 4
     m_Data: {fileID: 21300000, guid: 2fa3cbfa3d618894cb2540a17bee8da1, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: 21300000, guid: f55a174175c004e4d9c080fea4cc52da, type: 3}
-  - m_RefCount: 11
+  - m_RefCount: 10
     m_Data: {fileID: 21300000, guid: e4a2c61493bae5845872126740cd052b, type: 3}
   - m_RefCount: 10
     m_Data: {fileID: 21300000, guid: 0fc8565c24c3a0d45b72990f15151ed6, type: 3}
