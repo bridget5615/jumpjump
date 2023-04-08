@@ -36698,6 +36698,10 @@ PrefabInstance:
       value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 5846828746210919735, guid: 3a7598e0321614ee9aab47eb428d6d49, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5846828746210919735, guid: 3a7598e0321614ee9aab47eb428d6d49, type: 3}
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
@@ -38175,9 +38179,6 @@ MonoBehaviour:
   gameOverScreen: {fileID: 964945661}
   pauseMenuScreen: {fileID: 1004711581}
   coinsText: {fileID: 1863562292}
-  playerPrefabs:
-  - {fileID: 5846828746210919735, guid: 3a7598e0321614ee9aab47eb428d6d49, type: 3}
-  - {fileID: 3123393402258097762, guid: 4a7e42161969f44c598666614e8facba, type: 3}
 --- !u!114 &1822470127
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -39576,6 +39577,7 @@ GameObject:
   - component: {fileID: 1945686993}
   - component: {fileID: 1945686992}
   - component: {fileID: 1945686991}
+  - component: {fileID: 1945686995}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -39663,6 +39665,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1945686995
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1945686990}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd154209b7e06456a8794f64cc0dcbec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1949312798
 GameObject:
   m_ObjectHideFlags: 0
