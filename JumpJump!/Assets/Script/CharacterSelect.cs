@@ -75,7 +75,7 @@ public class CharacterSelect : MonoBehaviour
     public void UpdateUI()
     {
         coinsText.text = numberOfCoins.ToString();
-        // nameText.text = characters[selectedCharacter].name;
+        nameText.text = characters[selectedCharacter].name;
         if (characters[selectedCharacter].isUnlocked == true)
         {
             unlockButton.gameObject.SetActive(false);
