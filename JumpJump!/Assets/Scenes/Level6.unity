@@ -3368,6 +3368,10 @@ PrefabInstance:
       propertyPath: coin2
       value: 
       objectReference: {fileID: 366531030}
+    - target: {fileID: 5846828746210919729, guid: 3a7598e0321614ee9aab47eb428d6d49, type: 3}
+      propertyPath: coinsText
+      value: 
+      objectReference: {fileID: 88036001}
     - target: {fileID: 5846828746210919730, guid: 3a7598e0321614ee9aab47eb428d6d49, type: 3}
       propertyPath: m_SortingOrder
       value: 7
@@ -3534,6 +3538,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelCompleteScreenNext: {fileID: 1740342448}
   levelCompleteScreenchangeleg: {fileID: 1332262312}
+  playfabManager: {fileID: 1782068394}
 --- !u!114 &366531029
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24426,6 +24431,8 @@ MonoBehaviour:
   gameOverScreen: {fileID: 912358165}
   pauseMenuScreen: {fileID: 2016124111}
   coinsText: {fileID: 88036001}
+  playfabManager: {fileID: 1782068394}
+  maxPlatform: 0
 --- !u!114 &1079976604
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31324,6 +31331,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd154209b7e06456a8794f64cc0dcbec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  messageText: {fileID: 0}
+  usernameInput: {fileID: 0}
+  titleId: EBE9E
 --- !u!1 &1796605091
 GameObject:
   m_ObjectHideFlags: 0

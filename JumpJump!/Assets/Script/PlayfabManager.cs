@@ -1,9 +1,11 @@
+using System;
 using System.Collections.Generic;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 using PlayFab;
 using PlayFab.ClientModels;
+using PlayFab.Internal;
 using TMPro; 
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
@@ -27,81 +29,30 @@ public class PlayfabManager : MonoBehaviour
     [Header("UI")]
     public TextMeshProUGUI messageText;
     public TMP_InputField usernameInput;
+    
+
+    [Header("PlayFab")]
+    [SerializeField] private string titleId = "EBE9E"; // Replace with your title id
 
     private string displayName;
 
-
-    void OnRegisterSuccess(RegisterPlayFabUserResult result)
+    private void Awake()
     {
-        messageText.text = "Registered and logged in!";
+        PlayFabSettings.TitleId = titleId;
     }
 
-    public void LoginButton()
-{
-    if (string.IsNullOrEmpty(usernameInput.text))
-    {
-        messageText.text = "Please enter your username.";
-        return;
-    }
-
-    if (string.IsNullOrEmpty(passwordInput.text))
-    {
-        messageText.text = "Please enter your password.";
-        return;
-    }
-
-    var request = new LoginWithPlayFabRequest { 
-        Username = usernameInput.text,
-        Password = passwordInput.text
-    };
-
-    PlayFabClientAPI.LoginWithPlayFab(request, OnLoginSuccess, OnError);
-}
-
-    void OnLoginSuccess(LoginResult result)
-    {
-        messageText.text = "Logged in successfully!";
-        string name = null;
-        if(result.InfoResultPayload.PlayerProfile != null)
-            name = result.InfoResultPayload.PlayerProfile.DisplayName;
-        
-        if (name == null)
-            nameWindow.SetActive(true);
-        else
-            leaderboardWindow.SetActive(true);
-    }
-
-
-    public void ResetPasswordButton()
-{
-    if (string.IsNullOrEmpty(usernameInput.text))
-    {
-        var request = new SendAccountRecoveryEmailRequest 
-        {
-            Email = usernameInput.text, 
-            TitleId = PlayFabSettings.TitleId
-        };
-        PlayFabClientAPI.SendAccountRecoveryEmail(request, onPasswordReset, OnError);
-
-    };
-}
-
-void onPasswordReset(SendAccountRecoveryEmailResult result)
-{
-    messageText.text = "Password reset email sent!";
-}
-
-
-   // Start is called before the first frame update
-    void Start()
-    {
-        UnityEngine.Debug.Log("PlayfabManager Start called");
-
-        messageText.text = "Please key in your username to play :)";
-    }
 
     public void Login()
     {
+        // Check if the username input field is empty
+        if (string.IsNullOrEmpty(usernameInput.text))
+        {
+            DisplayErrorMessage("Please enter a username :)");
+            return;
+        }
+
+        // Call the PlayFab login API with the device ID as the custom ID
+        string customId = SystemInfo.deviceUniqueIdentifier;
         var request = new LoginWithCustomIDRequest { 
             CustomId = SystemInfo.deviceUniqueIdentifier, 
             CreateAccount = true,
@@ -113,24 +64,38 @@ void onPasswordReset(SendAccountRecoveryEmailResult result)
         PlayFabClientAPI.LoginWithCustomID(request, OnLoginSuccess, OnLoginError);
     }
 
+
+
+    IEnumerator DelayedLoginSuccess(LoginResult result)
+    {
+        yield return new WaitForSeconds(1f);
+        OnLoginSuccess(result);
+    }
+
     void OnLoginSuccess(LoginResult result)
     {
         messageText.text = "Login successful!";
-        UnityEngine.Debug.Log("Successful login/account created!");
+        Debug.Log("Successful login/account created!");
 
         // Update the user's display name in PlayFab
         UpdateDisplayName();
-        SceneManager.LoadScene("MainMenu"); 
+
+        StartCoroutine(DelayedLoadMainMenu());
+    }
+
+    IEnumerator DelayedLoadMainMenu()
+    {
+        yield return new WaitForSeconds(1f);
+        SceneManager.LoadScene("MainMenu");
     }
 
     void OnLoginError(PlayFabError error)
     {
         string errorMessage = error.GenerateErrorReport();
         DisplayErrorMessage(errorMessage);
-        UnityEngine.Debug.Log("Error while logging in/creating a new account");
-        UnityEngine.Debug.Log(errorMessage);
+        Debug.Log("Error while logging in/creating a new account");
+        Debug.Log(errorMessage);
     }
-
 
     void UpdateDisplayName()
     {
@@ -146,15 +111,16 @@ void onPasswordReset(SendAccountRecoveryEmailResult result)
 
     void OnDisplayNameUpdateSuccess(UpdateUserTitleDisplayNameResult result)
     {
-        UnityEngine.Debug.Log("Display name updated successfully!");
+        Debug.Log("Display name updated successfully!");
     }
 
     void OnDisplayNameUpdateError(PlayFabError error)
     {
         string errorMessage = error.GenerateErrorReport();
         DisplayErrorMessage(errorMessage);
-        UnityEngine.Debug.LogError("Failed to update display name: " + errorMessage);
+        Debug.LogError("Failed to update display name: " + errorMessage);
     }
+
     void DisplayErrorMessage(string message)
     {
         messageText.text = message;
@@ -193,7 +159,6 @@ void onPasswordReset(SendAccountRecoveryEmailResult result)
         yield return new WaitForSeconds(1f);
     }
 
-
     public void SendLeaderboardDelayedButton(int score)
     {
         StartCoroutine(SendLeaderboardWithDelay(score, 1f));
@@ -202,7 +167,34 @@ void onPasswordReset(SendAccountRecoveryEmailResult result)
     public IEnumerator SendLeaderboardWithDelay(int score, float delay)
     {
         yield return new WaitForSeconds(delay);
-        SendLeaderboardCoroutine(score);
+        var request = new UpdatePlayerStatisticsRequest
+        {
+            Statistics = new List<StatisticUpdate>
+            {
+                new StatisticUpdate
+                {
+                    StatisticName = "Platform Score",
+                    Value = score
+                }
+            }
+        };
+
+        PlayFabClientAPI.UpdatePlayerStatistics(request, OnLeaderboardUpdate, OnLeaderboardUpdateError);
+
+        // Wait for a short delay after the PlayFab API call
+        yield return new WaitForSeconds(1f);
+    }
+
+    void OnLeaderboardUpdate(UpdatePlayerStatisticsResult result)
+    {
+        UnityEngine.Debug.Log("Leaderboard updated successfully!");
+    }
+
+    void OnLeaderboardUpdateError(PlayFabError error)
+    {
+        string errorMessage = error.GenerateErrorReport();
+        DisplayErrorMessage(errorMessage);
+        UnityEngine.Debug.LogError("Failed to update leaderboard: " + errorMessage);
     }
 
     public void GetLeaderboard()
@@ -237,9 +229,9 @@ void onPasswordReset(SendAccountRecoveryEmailResult result)
         }
     }
 
-    void OnLeaderboardUpdate(UpdatePlayerStatisticsResult result)
+    void OnLeaderboardUpdateDelayed(UpdatePlayerStatisticsResult result)
     {
-        UnityEngine.Debug.Log("Leaderboard updated!");
+        UnityEngine.Debug.Log("Leaderboard updated with delay!");
     }
 
     public void SubmitNameButton()
