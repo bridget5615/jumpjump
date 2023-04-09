@@ -13640,7 +13640,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Leg Change~
+  m_text: Leg Change
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9f64a842f6035442e938ff0dea9f64ce, type: 2}
   m_sharedMaterial: {fileID: 4659514107765243611, guid: 9f64a842f6035442e938ff0dea9f64ce, type: 2}
@@ -23206,7 +23206,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: 'High Score: -'
 --- !u!222 &1581366339
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -36675,7 +36675,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: 'Current Score: -'
 --- !u!222 &1783300689
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -38073,6 +38073,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd154209b7e06456a8794f64cc0dcbec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rowPrefab: {fileID: 0}
+  rowsParent: {fileID: 0}
+  nameWindow: {fileID: 0}
+  leaderboardWindow: {fileID: 0}
+  nameError: {fileID: 0}
+  nameinput: {fileID: 0}
   messageText: {fileID: 0}
   usernameInput: {fileID: 0}
   titleId: EBE9E

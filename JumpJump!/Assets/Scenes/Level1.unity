@@ -10861,7 +10861,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 645544134}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 67.9007, y: 7.3911, z: 0}
+  m_LocalPosition: {x: 69.67, y: 7.29, z: 0}
   m_LocalScale: {x: 2.4882843, y: 2.7030554, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -11200,8 +11200,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd154209b7e06456a8794f64cc0dcbec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rowPrefab: {fileID: 0}
+  rowsParent: {fileID: 0}
+  nameWindow: {fileID: 0}
+  leaderboardWindow: {fileID: 0}
+  nameError: {fileID: 0}
+  nameinput: {fileID: 0}
   messageText: {fileID: 0}
   usernameInput: {fileID: 0}
+  titleId: EBE9E
 --- !u!1 &943860385
 GameObject:
   m_ObjectHideFlags: 0
@@ -11736,7 +11743,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Leg Change~
+  m_text: Leg Change
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9f64a842f6035442e938ff0dea9f64ce, type: 2}
   m_sharedMaterial: {fileID: 4659514107765243611, guid: 9f64a842f6035442e938ff0dea9f64ce, type: 2}
@@ -11896,13 +11903,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11500000, guid: 92bdaffd8708a49dab42ff71b7914b60, type: 3}
+      - m_Target: {fileID: 673957777}
         m_TargetAssemblyTypeName: PlayerManager, Assembly-CSharp
-        m_MethodName: 
+        m_MethodName: GoToMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -12913,7 +12920,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: 'Current Score: -'
 --- !u!222 &1606859622
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -32463,7 +32470,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: 'High Score: -'
 --- !u!222 &2041770750
 CanvasRenderer:
   m_ObjectHideFlags: 0

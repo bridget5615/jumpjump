@@ -3,12 +3,11 @@ using System.Collections.Generic;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using PlayFab;
 using PlayFab.ClientModels;
 using PlayFab.Internal;
 using TMPro; 
-using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 
 public class PlayfabManager : MonoBehaviour
 {
@@ -240,7 +239,7 @@ public class PlayfabManager : MonoBehaviour
         {
             DisplayName = nameinput.text,
         };
-        PlayFabClientAPI.UpdateUserTitleDisplayName(request, OnDisplayNameUpdate, OnError);
+        PlayFabClientAPI.UpdateUserTitleDisplayName(request, OnDisplayNameUpdate, OnLoginError);
     }
 
     void OnDisplayNameUpdate(UpdateUserTitleDisplayNameResult result)

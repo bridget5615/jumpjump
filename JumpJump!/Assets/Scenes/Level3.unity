@@ -5667,7 +5667,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Leg Change~
+  m_text: Leg Change
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9f64a842f6035442e938ff0dea9f64ce, type: 2}
   m_sharedMaterial: {fileID: 4659514107765243611, guid: 9f64a842f6035442e938ff0dea9f64ce, type: 2}
@@ -6357,7 +6357,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: 'Current Score: -'
 --- !u!222 &1015035336
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6742,6 +6742,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd154209b7e06456a8794f64cc0dcbec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rowPrefab: {fileID: 0}
+  rowsParent: {fileID: 0}
+  nameWindow: {fileID: 0}
+  leaderboardWindow: {fileID: 0}
+  nameError: {fileID: 0}
+  nameinput: {fileID: 0}
   messageText: {fileID: 0}
   usernameInput: {fileID: 0}
   titleId: EBE9E
@@ -7291,8 +7297,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1294037010}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 75.7, y: 0.8904, z: 0}
-  m_LocalScale: {x: 1.8268, y: 1.6809, z: 1}
+  m_LocalPosition: {x: 75.9777, y: 1.2936, z: 0}
+  m_LocalScale: {x: 2.3821332, y: 2.4873967, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1555068465}
@@ -12823,8 +12829,8 @@ Tilemap:
   - first: {x: 80, y: -2, z: 0}
     second:
       serializedVersion: 2
-      m_TileIndex: 6
-      m_TileSpriteIndex: 6
+      m_TileIndex: 3
+      m_TileSpriteIndex: 3
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -14638,13 +14644,13 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: d0920686de8054a708758594c6e78048, type: 2}
   - m_RefCount: 4
     m_Data: {fileID: 11400000, guid: e7bcb2d6f86b3461898db40843a1c358, type: 2}
-  - m_RefCount: 430
+  - m_RefCount: 431
     m_Data: {fileID: 11400000, guid: 17ee6f1987c5643d5afc8e27cdd7fcb7, type: 2}
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: c258f92de2495487b97e4ff8974f309b, type: 2}
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: 3a058fa6bf9924efb8564b83ad6cf427, type: 2}
-  - m_RefCount: 12
+  - m_RefCount: 11
     m_Data: {fileID: 11400000, guid: c35b9d34eece34fb1a660115d4f0b887, type: 2}
   - m_RefCount: 12
     m_Data: {fileID: 11400000, guid: a403c206da97245c3b0799978f95fe60, type: 2}
@@ -14657,13 +14663,13 @@ Tilemap:
     m_Data: {fileID: 21300000, guid: 0ca22b74d58659c438cd630b98174fb3, type: 3}
   - m_RefCount: 4
     m_Data: {fileID: 21300000, guid: 2c62264155282ae4e8331ecdbb71f3a5, type: 3}
-  - m_RefCount: 430
+  - m_RefCount: 431
     m_Data: {fileID: 21300000, guid: 818f5c33f57454540951217553efbe57, type: 3}
   - m_RefCount: 5
     m_Data: {fileID: 21300000, guid: 2fa3cbfa3d618894cb2540a17bee8da1, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: 21300000, guid: f55a174175c004e4d9c080fea4cc52da, type: 3}
-  - m_RefCount: 12
+  - m_RefCount: 11
     m_Data: {fileID: 21300000, guid: e4a2c61493bae5845872126740cd052b, type: 3}
   - m_RefCount: 12
     m_Data: {fileID: 21300000, guid: 0fc8565c24c3a0d45b72990f15151ed6, type: 3}
@@ -15028,7 +15034,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: 'High Score: -'
 --- !u!222 &1358293606
 CanvasRenderer:
   m_ObjectHideFlags: 0
