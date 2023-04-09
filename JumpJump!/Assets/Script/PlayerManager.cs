@@ -88,7 +88,7 @@ public class PlayerManager : MonoBehaviour
     // go back to home button 
     public void GoToMenu()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene("MainMenu");
     }
 
     public void NextLevel()
