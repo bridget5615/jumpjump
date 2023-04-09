@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 using PlayFab;
 using PlayFab.ClientModels;
 using PlayFab.Internal;
@@ -11,6 +12,20 @@ using UnityEngine.SceneManagement;
 
 public class PlayfabManager : MonoBehaviour
 {
+
+    [Header("Leaderboard")]
+    public GameObject rowPrefab;
+    public Transform rowsParent;
+
+    [Header("Windows")]
+    public GameObject nameWindow;
+    public GameObject leaderboardWindow;
+
+
+    [Header("Display name window")]
+    public GameObject nameError;
+    public TMP_InputField nameinput;
+
     [Header("UI")]
     public TextMeshProUGUI messageText;
     public TMP_InputField usernameInput;
@@ -21,10 +36,11 @@ public class PlayfabManager : MonoBehaviour
 
     private string displayName;
 
-    void Awake()
+    private void Awake()
     {
-        PlayFabSettings.staticSettings.TitleId = titleId;
+        PlayFabSettings.TitleId = titleId;
     }
+
 
     public void Login()
     {
@@ -37,7 +53,14 @@ public class PlayfabManager : MonoBehaviour
 
         // Call the PlayFab login API with the device ID as the custom ID
         string customId = SystemInfo.deviceUniqueIdentifier;
-        var request = new LoginWithCustomIDRequest { CustomId = customId, CreateAccount = true };
+        var request = new LoginWithCustomIDRequest { 
+            CustomId = SystemInfo.deviceUniqueIdentifier, 
+            CreateAccount = true,
+            InfoRequestParameters = new GetPlayerCombinedInfoRequestParams
+            {
+                GetPlayerProfile = true
+            }
+        };
         PlayFabClientAPI.LoginWithCustomID(request, OnLoginSuccess, OnLoginError);
     }
 
@@ -187,9 +210,22 @@ public class PlayfabManager : MonoBehaviour
 
     void OnLeaderboardGet(GetLeaderboardResult result)
     {
-        foreach (var entry in result.Leaderboard)
+        foreach (Transform item in rowsParent)
         {
-            UnityEngine.Debug.Log(entry.Position + " " + entry.PlayFabId + " " + entry.StatValue);
+            Destroy(item.gameObject);
+        }
+
+        foreach (var item in result.Leaderboard)
+        {
+            GameObject newGo = Instantiate(rowPrefab,rowsParent);
+            Text[] texts = newGo.GetComponentsInChildren<Text>();
+            texts[0].text = (item.Position +1).ToString();
+            texts[1].text = item.DisplayName;
+            texts[2].text = item.StatValue.ToString();
+
+            Debug.Log(string.Format("PLACE:{0}| ID:{1}| VALUE:{2}",
+            item.Position, item.PlayFabId, item.StatValue));
+
         }
     }
 
@@ -197,5 +233,19 @@ public class PlayfabManager : MonoBehaviour
     {
         UnityEngine.Debug.Log("Leaderboard updated with delay!");
     }
-   
+
+    public void SubmitNameButton()
+    {
+        var request = new UpdateUserTitleDisplayNameRequest
+        {
+            DisplayName = nameinput.text,
+        };
+        PlayFabClientAPI.UpdateUserTitleDisplayName(request, OnDisplayNameUpdate, OnError);
+    }
+
+    void OnDisplayNameUpdate(UpdateUserTitleDisplayNameResult result)
+    {
+        Debug.Log("Updated display name!");
+        leaderboardWindow.SetActive(true);
+    }
 }
