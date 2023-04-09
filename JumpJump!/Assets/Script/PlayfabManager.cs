@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 using PlayFab;
 using PlayFab.ClientModels;
 using TMPro; 
@@ -9,12 +10,89 @@ using UnityEngine.SceneManagement;
 
 public class PlayfabManager : MonoBehaviour
 {
+
+    [Header("Leaderboard")]
+    public GameObject rowPrefab;
+    public Transform rowsParent;
+
+    [Header("Windows")]
+    public GameObject nameWindow;
+    public GameObject leaderboardWindow;
+
+
+    [Header("Display name window")]
+    public GameObject nameError;
+    public TMP_InputField nameinput;
+
     [Header("UI")]
     public TextMeshProUGUI messageText;
     public TMP_InputField usernameInput;
 
     private string displayName;
 
+
+    void OnRegisterSuccess(RegisterPlayFabUserResult result)
+    {
+        messageText.text = "Registered and logged in!";
+    }
+
+    public void LoginButton()
+{
+    if (string.IsNullOrEmpty(usernameInput.text))
+    {
+        messageText.text = "Please enter your username.";
+        return;
+    }
+
+    if (string.IsNullOrEmpty(passwordInput.text))
+    {
+        messageText.text = "Please enter your password.";
+        return;
+    }
+
+    var request = new LoginWithPlayFabRequest { 
+        Username = usernameInput.text,
+        Password = passwordInput.text
+    };
+
+    PlayFabClientAPI.LoginWithPlayFab(request, OnLoginSuccess, OnError);
+}
+
+    void OnLoginSuccess(LoginResult result)
+    {
+        messageText.text = "Logged in successfully!";
+        string name = null;
+        if(result.InfoResultPayload.PlayerProfile != null)
+            name = result.InfoResultPayload.PlayerProfile.DisplayName;
+        
+        if (name == null)
+            nameWindow.SetActive(true);
+        else
+            leaderboardWindow.SetActive(true);
+    }
+
+
+    public void ResetPasswordButton()
+{
+    if (string.IsNullOrEmpty(usernameInput.text))
+    {
+        var request = new SendAccountRecoveryEmailRequest 
+        {
+            Email = usernameInput.text, 
+            TitleId = PlayFabSettings.TitleId
+        };
+        PlayFabClientAPI.SendAccountRecoveryEmail(request, onPasswordReset, OnError);
+
+    };
+}
+
+void onPasswordReset(SendAccountRecoveryEmailResult result)
+{
+    messageText.text = "Password reset email sent!";
+}
+
+
+   // Start is called before the first frame update
     void Start()
     {
         UnityEngine.Debug.Log("PlayfabManager Start called");
@@ -26,7 +104,11 @@ public class PlayfabManager : MonoBehaviour
     {
         var request = new LoginWithCustomIDRequest { 
             CustomId = SystemInfo.deviceUniqueIdentifier, 
-            CreateAccount = true 
+            CreateAccount = true,
+            InfoRequestParameters = new GetPlayerCombinedInfoRequestParams
+            {
+                GetPlayerProfile = true
+            }
         };
         PlayFabClientAPI.LoginWithCustomID(request, OnLoginSuccess, OnLoginError);
     }
@@ -136,9 +218,22 @@ public class PlayfabManager : MonoBehaviour
 
     void OnLeaderboardGet(GetLeaderboardResult result)
     {
-        foreach (var entry in result.Leaderboard)
+        foreach (Transform item in rowsParent)
         {
-            UnityEngine.Debug.Log(entry.Position + " " + entry.PlayFabId + " " + entry.StatValue);
+            Destroy(item.gameObject);
+        }
+
+        foreach (var item in result.Leaderboard)
+        {
+            GameObject newGo = Instantiate(rowPrefab,rowsParent);
+            Text[] texts = newGo.GetComponentsInChildren<Text>();
+            texts[0].text = (item.Position +1).ToString();
+            texts[1].text = item.DisplayName;
+            texts[2].text = item.StatValue.ToString();
+
+            Debug.Log(string.Format("PLACE:{0}| ID:{1}| VALUE:{2}",
+            item.Position, item.PlayFabId, item.StatValue));
+
         }
     }
 
@@ -146,5 +241,19 @@ public class PlayfabManager : MonoBehaviour
     {
         UnityEngine.Debug.Log("Leaderboard updated!");
     }
-   
+
+    public void SubmitNameButton()
+    {
+        var request = new UpdateUserTitleDisplayNameRequest
+        {
+            DisplayName = nameinput.text,
+        };
+        PlayFabClientAPI.UpdateUserTitleDisplayName(request, OnDisplayNameUpdate, OnError);
+    }
+
+    void OnDisplayNameUpdate(UpdateUserTitleDisplayNameResult result)
+    {
+        Debug.Log("Updated display name!");
+        leaderboardWindow.SetActive(true);
+    }
 }
