@@ -7,7 +7,7 @@ onBoardingDoNotAskAgain = true
 showPackageIndexes = false
 showStatusBar = false
 scopes = {
-	"last_search.DA949528" = "datamanager"
+	"last_search.DA949528" = "levelmanager"
 	"OpenInspectorPreview.DA949528" = "0"
 	"currentGroup.DA949528" = "menu"
 }
@@ -56,6 +56,8 @@ providers = {
 objectSelectors = {
 }
 recentSearches = [
+	"l"
+	"pla"
 	"da"
 	"qu"
 	"ti"
