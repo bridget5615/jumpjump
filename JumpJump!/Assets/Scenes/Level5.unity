@@ -1834,7 +1834,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Leg Change~
+  m_text: Leg Change
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9f64a842f6035442e938ff0dea9f64ce, type: 2}
   m_sharedMaterial: {fileID: 4659514107765243611, guid: 9f64a842f6035442e938ff0dea9f64ce, type: 2}
@@ -3470,8 +3470,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 491146633}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 94.78, y: 6.78, z: 0}
-  m_LocalScale: {x: 1.8268, y: 1.6809, z: 1}
+  m_LocalPosition: {x: 94.9694, y: 7.1388, z: 0}
+  m_LocalScale: {x: 2.2054956, y: 2.3986444, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1290983057}
@@ -7152,6 +7152,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd154209b7e06456a8794f64cc0dcbec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rowPrefab: {fileID: 0}
+  rowsParent: {fileID: 0}
+  nameWindow: {fileID: 0}
+  leaderboardWindow: {fileID: 0}
+  nameError: {fileID: 0}
+  nameinput: {fileID: 0}
   messageText: {fileID: 0}
   usernameInput: {fileID: 0}
   titleId: EBE9E
@@ -15531,7 +15537,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: 'High Score: -'
 --- !u!222 &1703084385
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -16705,7 +16711,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: 'Current Score: -'
 --- !u!222 &1942807675
 CanvasRenderer:
   m_ObjectHideFlags: 0
