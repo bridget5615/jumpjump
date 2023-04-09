@@ -363,7 +363,11 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+<<<<<<< Updated upstream
       - m_Target: {fileID: 1672971741}
+=======
+      - m_Target: {fileID: 525995957}
+>>>>>>> Stashed changes
         m_TargetAssemblyTypeName: PlayfabManager, Assembly-CSharp
         m_MethodName: GetLeaderboard
         m_Mode: 1
