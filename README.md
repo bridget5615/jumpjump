@@ -1,7 +1,7 @@
 # JumpJump!
 ## BN4102 Gerontechnology for Ageing
 
-Our group has chosen to target the issue of sarcopenia amongst older adults – an age-related condition that leads to the deterioration of muscle mass and function, leading to reduced mobility. It is found that to reduce the progression of sarcopenia, resistance training can be prescribed. To tackle the issue of sarcopenia, we have come up with JumpJump! – an exergame that specifically targets hip exercises. JumpJump! involves 2 main components; a portable resistance training tool that is connected to our game. While connected to our game, one repetition of the hip abduction exercise would lead our avatar to jump and avoid falling into the body of water. Falling into the body of water would prematurely end the game. The aim of JumpJump! is to encourage players to exercise regularly whilst making resistance training fun. 
+Our group is addressing the issue of sarcopenia, which is the age-related loss of muscle mass that affects many older adults, leading to reduced mobility and increased risk of falls. To combat this issue, we have created JumpJump, an exergame that focuses on hip mobility and strength through a specific exercise - hip abduction. The game comprises two main components: a portable resistance training tool and an online game, which are connected through sensors that detect the user's movements. The objective of the game is to help the avatar jump and avoid falling into the water, which is achieved by performing a repetition of the exercise. JumpJump is designed to make resistance training enjoyable and encourage users to exercise regularly to improve lower body functionality.
 
 Group Members: 
 - Bridget Chua
