@@ -10902,6 +10902,8 @@ MonoBehaviour:
   gameOverScreen: {fileID: 592126261}
   pauseMenuScreen: {fileID: 2044926605}
   coinsText: {fileID: 1386353129}
+  playfabManager: {fileID: 816881406}
+  maxPlatform: 0
 --- !u!114 &673957778
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11198,6 +11200,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd154209b7e06456a8794f64cc0dcbec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  messageText: {fileID: 0}
+  usernameInput: {fileID: 0}
 --- !u!1 &943860385
 GameObject:
   m_ObjectHideFlags: 0
@@ -11892,13 +11896,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 673957777}
+      - m_Target: {fileID: 11500000, guid: 92bdaffd8708a49dab42ff71b7914b60, type: 3}
         m_TargetAssemblyTypeName: PlayerManager, Assembly-CSharp
-        m_MethodName: GoToMenu
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgumentAssemblyTypeName: 
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -31376,8 +31380,8 @@ Tilemap:
   - first: {x: 70, y: 4, z: 0}
     second:
       serializedVersion: 2
-      m_TileIndex: 7
-      m_TileSpriteIndex: 7
+      m_TileIndex: 3
+      m_TileSpriteIndex: 3
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -32311,7 +32315,7 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: d0920686de8054a708758594c6e78048, type: 2}
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: e7bcb2d6f86b3461898db40843a1c358, type: 2}
-  - m_RefCount: 1093
+  - m_RefCount: 1094
     m_Data: {fileID: 11400000, guid: 17ee6f1987c5643d5afc8e27cdd7fcb7, type: 2}
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: c258f92de2495487b97e4ff8974f309b, type: 2}
@@ -32319,7 +32323,7 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: 3a058fa6bf9924efb8564b83ad6cf427, type: 2}
   - m_RefCount: 5
     m_Data: {fileID: 11400000, guid: c35b9d34eece34fb1a660115d4f0b887, type: 2}
-  - m_RefCount: 12
+  - m_RefCount: 11
     m_Data: {fileID: 11400000, guid: a403c206da97245c3b0799978f95fe60, type: 2}
   - m_RefCount: 118
     m_Data: {fileID: 11400000, guid: 84dccbfd4676b4fc9b2b368aa169eebc, type: 2}
@@ -32330,7 +32334,7 @@ Tilemap:
     m_Data: {fileID: 21300000, guid: 0ca22b74d58659c438cd630b98174fb3, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: 21300000, guid: 5bbf36be5d90ce842b04311dfec1f3fc, type: 3}
-  - m_RefCount: 1093
+  - m_RefCount: 1094
     m_Data: {fileID: 21300000, guid: 818f5c33f57454540951217553efbe57, type: 3}
   - m_RefCount: 4
     m_Data: {fileID: 21300000, guid: 2fa3cbfa3d618894cb2540a17bee8da1, type: 3}
@@ -32338,7 +32342,7 @@ Tilemap:
     m_Data: {fileID: 21300000, guid: f55a174175c004e4d9c080fea4cc52da, type: 3}
   - m_RefCount: 5
     m_Data: {fileID: 21300000, guid: e4a2c61493bae5845872126740cd052b, type: 3}
-  - m_RefCount: 12
+  - m_RefCount: 11
     m_Data: {fileID: 21300000, guid: 0fc8565c24c3a0d45b72990f15151ed6, type: 3}
   - m_RefCount: 118
     m_Data: {fileID: 21300000, guid: 91e7c6b4b78bac14996a7461f3cd3648, type: 3}
@@ -37666,6 +37670,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Blob
       objectReference: {fileID: 0}
+    - target: {fileID: 3434447119033417901, guid: c7d2e1d51327142ce9cac8f25cd0af00, type: 3}
+      propertyPath: coinsText
+      value: 
+      objectReference: {fileID: 1386353129}
     - target: {fileID: 3434447119033417902, guid: c7d2e1d51327142ce9cac8f25cd0af00, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -37722,6 +37730,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9119086319910424057, guid: c7d2e1d51327142ce9cac8f25cd0af00, type: 3}
+      propertyPath: playfabManager
+      value: 
+      objectReference: {fileID: 816881406}
     - target: {fileID: 9119086319910424057, guid: c7d2e1d51327142ce9cac8f25cd0af00, type: 3}
       propertyPath: levelCompleteScreen
       value: 
