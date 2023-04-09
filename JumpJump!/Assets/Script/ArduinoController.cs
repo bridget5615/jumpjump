@@ -62,6 +62,7 @@ public class ArduinoController : MonoBehaviour
         if (Direction == 14 && grounded)
         {
             myRigidbody.velocity = new Vector2(myRigidbody.velocity.x, jumpForce);
+            ScoreManager.instance.AddPoint();
             myAnimator.SetBool("isJumping", true);
             transform.Translate(Vector3.right * amountToMove, Space.World);
         }
