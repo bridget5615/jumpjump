@@ -2267,6 +2267,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   messageText: {fileID: 346959957}
   usernameInput: {fileID: 2021137850}
+  titleId: EBE9E
 --- !u!1 &538932019
 GameObject:
   m_ObjectHideFlags: 0
@@ -2303,7 +2304,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -75}
+  m_AnchoredPosition: {x: 0, y: -69.2}
   m_SizeDelta: {x: 60, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &538932021
@@ -3130,7 +3131,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &856637129
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4746,7 +4747,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.50337213}
   m_AnchorMax: {x: 0.5, y: 0.5033722}
-  m_AnchoredPosition: {x: 72, y: 45}
+  m_AnchoredPosition: {x: 70, y: 32}
   m_SizeDelta: {x: 200, y: 47}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1352398202
@@ -5475,7 +5476,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1541604817
 RectTransform:
   m_ObjectHideFlags: 0
