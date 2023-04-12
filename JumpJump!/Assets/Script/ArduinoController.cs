@@ -12,7 +12,7 @@ public class ArduinoController : MonoBehaviour
     public float jumpForce;
 
 
-    SerialPort sp = new SerialPort("/dev/tty.usbmodem11201", 9600);
+    SerialPort sp = new SerialPort("/dev/tty.usbmodem1301", 9600);
 
     private Rigidbody2D myRigidbody;
 

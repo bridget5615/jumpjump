@@ -8,12 +8,12 @@ public class Quit : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            QuitGame();
+            Application.Quit();
         }
     }
-    public void QuitGame()
-    {
-        UnityEditor.EditorApplication.isPlaying = false;
-        Application.Quit();
-    }
+    // public void QuitGame()
+    // {
+    //     UnityEditor.EditorApplication.isPlaying = false;
+    //     Application.Quit();
+    // }
 }

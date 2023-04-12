@@ -7741,8 +7741,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3c6ef945e12b42fd9f49764a9e4c388, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelCompleteScreenNext: {fileID: 1460048775}
-  levelCompleteScreenchangeleg: {fileID: 98245196}
+  levelCompleteScreen: {fileID: 1460048775}
   playfabManager: {fileID: 227487734}
 --- !u!114 &1220292607
 MonoBehaviour:
@@ -17773,7 +17772,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 3.9971828, y: 2.1493564}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -17784,7 +17783,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 8.994366, y: 5.2987127}
   m_EdgeRadius: 0
 --- !u!212 &1642389945
 SpriteRenderer:
